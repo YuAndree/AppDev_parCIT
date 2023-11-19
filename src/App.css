@@ -1,0 +1,177 @@
+
+.App {
+   background-color: #621200;
+  height: 100vh;
+  margin: 0;
+}
+
+.button-container {
+  display: flex;
+  font-family: Verdana;
+  font-weight: bold;
+  align-items: center; 
+}
+
+.left {
+  font-family: Verdana; 
+  font-weight: bolder;
+  margin-right: 475px; 
+}
+
+.button-addcancel{
+  text-align: center;
+}
+
+ .right-buttons a{
+  text-decoration: none;
+  margin-left: 350px;
+}/*
+.rightbuttons a{
+  position: 220px;
+} */
+.add-button,
+.update-button {
+  font-family: Verdana;
+  font-weight: bold;
+  padding: 1px;
+  font-size: 1em;
+  cursor: pointer;
+}
+.outside-container {
+  width: 1000;
+  margin-bottom: 20px;
+  background-color: #FFB155;
+  padding: 15px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+.outside-con{
+  width: 1035px;
+  height: 340px;
+  margin-bottom: 20px;
+  background-color: #FFB155;
+  padding: 15px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+  .content-section {
+    width: 1100px;
+    margin-bottom: 15px;
+    background-color: #D9D9D9;
+    padding: 15px;
+    color:black;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .content-secc{
+    width: 1000px;
+    height: 310px;
+    margin-bottom: 15px;
+    background-color: #D9D9D9;
+    padding: 15px;
+    color:black;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+  }
+  .content-section p{
+    font-family:verdana;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+  }
+.content-sec p{
+  width: 770  px;
+  margin-bottom: 15px;
+  background-color: #D9D9D9;
+  padding: 15px;
+  color:black;
+  font-family:verdana;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: left;
+}
+.details-section{
+  width: 800px;
+  height: 200px;
+  font-size: 30px;
+}
+.details-section p{
+  font-weight: bold;
+  font-family: verdana;
+}
+.plus-min {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.main-title{
+  font-size: 50px;
+  font-family: Verdana; 
+  font-weight: bolder;
+  text-align: center;
+}
+
+.app-container {
+  background-color: #621200;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.school-container {
+  background-color: #621200;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.school-title {
+  font-size: 50px;
+  color: white;
+  font-family: Verdana; 
+  font-weight: bolder;
+}
+.vehicle{
+  text-align: center;
+
+}
+
+
+.front-container{
+    background-color: #621200;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main {
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.Logo {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    left: calc(50% - 500px / 2 + 4px);
+    top: 253px;
+}
+h2{
+    color: #ffd700;
+}
+

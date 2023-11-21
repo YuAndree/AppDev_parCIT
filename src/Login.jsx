@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import './RegisterForm.css';
-import logo1 from './Logo1.png';
 import back from './Back.png';
 import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
@@ -20,30 +19,33 @@ const SignupForm = () => {
     top: '20px',
   };
 
-  
   const buttonStyle = {
     borderRadius: '25px',
-    borderColor: 'white',
-    color: 'white',
+    backgroundColor: '#800000', // Maroon color for background
+    color: '#FFD700', // Gold color for text
     fontSize: '15px',
-    position: 'center', justifyAlign: 'center',alignText: 'center',
     marginBottom: '10px',
-    marginLeft: '80px',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    display: 'block', // Center the button
     fontWeight: 'bold',
     width: '150px',
     textTransform: 'none',
+    border: '2px solid #FFD700', // Gold color for border
+  };
+
+  const headerStyle = {
+    textAlign: 'center', // Center the text
+    marginBottom: '20px', // Adjust the spacing as needed
   };
 
   return (
     <div>
       <div className="login-container">
-      <Link to='/admin'>
-        <img src={back} alt="Back"  style={backButtonStyle}/>
-      </Link>
-      <h1 className="school-title">ParCIT</h1>
-      <div className='image'>
-        <img src={logo1} alt="Logo" /> <br/>
-      </div>
+        <Link to='/admin'>
+          <img src={back} alt="Back" style={backButtonStyle} />
+        </Link>
+        <h1 className="school-title" style={headerStyle}>ParCIT</h1>
         <form>
           <label>
             Username:
@@ -62,9 +64,10 @@ const SignupForm = () => {
             />
           </label>
           <Link to='/parkingspaces'>
-          <Button variant='outlined' style={buttonStyle} onClick={handleLogin}>
-            Log in
-          </Button></Link>
+            <Button variant='outlined' style={buttonStyle} onClick={handleLogin}>
+              Log in
+            </Button>
+          </Link>
         </form>
       </div>
     </div>

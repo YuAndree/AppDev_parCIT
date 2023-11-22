@@ -12,7 +12,6 @@ const MotorVehicle = () => {
   const buttonIcon = motorIcon;
 
   const buttonStyle = {
-    position: 'relative',
     borderRadius: '25px',
     backgroundColor: '#800000', // Maroon color for background
     color: '#FFD700', // Gold color for text
@@ -45,13 +44,13 @@ const MotorVehicle = () => {
   };
 
   return (
-    <div className="school-container">
+    <div>
       <Link to='/school'>
         <img src={back} alt="Back" style={backButtonStyle} />
       </Link>
-      <h1 className="school-title">ParCIT</h1>
+      <h1 className="school-title" style={{ textAlign: 'center', marginBottom: '20px' }}>ParCIT</h1>
       <img src={logo1} alt="Logo" style={logoStyle} /> <br />
-      <div className='vehicle'>
+      <div style={{ textAlign: 'center' }}>
         <Link to='/carparking'>
           <Button
             variant="outlined"

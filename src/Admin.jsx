@@ -3,7 +3,7 @@ import { Button } from '@mui/material';
 import logo1 from './Logo1.png';
 import adminIcon from './admin.png';
 import guestIcon from './guest.png';
-import './App.css'; // Assuming you have a separate CSS file
+import './App.css';
 
 function App() {
   const buttonIc = adminIcon;
@@ -23,7 +23,7 @@ function App() {
   };
 
   const iconStyle = {
-    filter: 'grayscale(100%)', // Convert icons to black
+    filter: 'grayscale(100%)', // Convert icons to black and white
     marginRight: '8px', // Adjust margin as needed
   };
 
@@ -41,33 +41,31 @@ function App() {
   };
 
   return (
-    <div className="app-container">
-      <div className="main">
-        <h1 className="main-title">ParCIT</h1>
-        <img src={logo1} alt="Logo" className="logo" />
+    <div className="main">
+      <h1 className="main-title">ParCIT</h1>
+      <img src={logo1} alt="Logo" className="logo" />
 
-        <Link to="/login">
-          <Button
-            variant="outlined"
-            style={buttonStyle}
-            startIcon={<img src={buttonIc} alt="Admin Icon" style={iconStyle} />}
-          >
-            Admin
-            <span style={pseudoElementStyle}></span>
-          </Button>
-        </Link>
+      <Link to="/login">
+        <Button
+          variant="outlined"
+          style={buttonStyle}
+          startIcon={<img src={buttonIc} alt="Admin Icon" style={iconStyle} />}
+        >
+          Admin
+          <span style={pseudoElementStyle}></span>
+        </Button>
+      </Link>
 
-        <Link to="/school">
-          <Button
-            variant="outlined"
-            style={buttonStyle}
-            startIcon={<img src={buttonIcon} alt="Guest Icon" style={iconStyle} />}
-          >
-            Guest
-            <span style={pseudoElementStyle}></span>
-          </Button>
-        </Link>
-      </div>
+      <Link to="/school">
+        <Button
+          variant="outlined"
+          style={buttonStyle}
+          startIcon={<img src={buttonIcon} alt="Guest Icon" style={iconStyle} />}
+        >
+          Guest
+          <span style={pseudoElementStyle}></span>
+        </Button>
+      </Link>
     </div>
   );
 }

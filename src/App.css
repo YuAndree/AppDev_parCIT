@@ -184,3 +184,11 @@ h2{
    color: #ffd700;
 }
 
+body {
+  background-image: url('./RoadBg.png');
+  background-size: '100% 100%';
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  margin: 0; /* Remove default margin */
+}

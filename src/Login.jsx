@@ -41,35 +41,33 @@ const SignupForm = () => {
 
   return (
     <div>
-      <div className="login-container">
-        <Link to='/admin'>
-          <img src={back} alt="Back" style={backButtonStyle} />
+      <Link to='/admin'>
+        <img src={back} alt="Back" style={backButtonStyle} />
+      </Link>
+      <h1 className="school-title" style={headerStyle}>ParCIT</h1>
+      <form className="login-form">
+        <label>
+          Username:
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </label>
+        <label>
+          Password:
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </label>
+        <Link to='/parkingspaces'>
+          <Button variant='outlined' style={buttonStyle} onClick={handleLogin}>
+            Log in
+          </Button>
         </Link>
-        <h1 className="school-title" style={headerStyle}>ParCIT</h1>
-        <form>
-          <label>
-            Username:
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </label>
-          <label>
-            Password:
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </label>
-          <Link to='/parkingspaces'>
-            <Button variant='outlined' style={buttonStyle} onClick={handleLogin}>
-              Log in
-            </Button>
-          </Link>
-        </form>
-      </div>
+      </form>
     </div>
   );
 };

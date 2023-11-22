@@ -10,8 +10,13 @@ const StudentTeacher = () => {
   const buttonIc = guestIcon;
   const buttonIcon = teacherIcon;
 
+  const buttonContainerStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  };
+
   const buttonStyle = {
-    position: 'relative',
     borderRadius: '25px',
     backgroundColor: '#800000', // Maroon color for background
     color: '#FFD700', // Gold color for text
@@ -21,6 +26,7 @@ const StudentTeacher = () => {
     fontWeight: 'bold',
     width: '200px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Add a subtle box shadow for a floating effect
+    position: 'relative', // Adjust position property
   };
 
   const backButtonStyle = {
@@ -51,31 +57,34 @@ const StudentTeacher = () => {
   };
 
   return (
-    <div className="school-container">
+    <div>
       <Link to='/admin'>
         <img src={back} alt="Back" style={backButtonStyle} />
       </Link>
-      <h1 className="school-title">ParCIT</h1>
+      <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>ParCIT</h1>
       <img src={logo1} alt="Logo" style={logoStyle} /> <br />
-      <Link to='/vehicle'>
-        <Button
-          variant="outlined"
-          style={buttonStyle}
-          startIcon={<img src={buttonIc} alt="Student Icon" />}
-        >
-          Student
-          <span style={pseudoElementStyle}></span>
-        </Button>
-        <br />
-        <Button
-          variant="outlined"
-          style={buttonStyle}
-          startIcon={<img src={buttonIcon} alt="Teacher Icon" />}
-        >
-          Teacher
-          <span style={pseudoElementStyle}></span>
-        </Button>
-      </Link>
+      <div style={buttonContainerStyle}>
+        <Link to='/vehicle'>
+          <Button
+            variant="outlined"
+            style={buttonStyle}
+            startIcon={<img src={buttonIc} alt="Student Icon" />}
+          >
+            Student
+            <span style={pseudoElementStyle}></span>
+          </Button>
+        </Link>
+        <Link to='/vehicle'>
+          <Button
+            variant="outlined"
+            style={buttonStyle}
+            startIcon={<img src={buttonIcon} alt="Teacher Icon" />}
+          >
+            Teacher
+            <span style={pseudoElementStyle}></span>
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 };

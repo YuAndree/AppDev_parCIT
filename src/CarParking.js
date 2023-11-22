@@ -1,5 +1,6 @@
+// CarParking.js
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './App.css';
 import back from './Back.png';
 
@@ -11,11 +12,13 @@ function CarParking() {
   };
 
   const parkingAreas = [
-    { name: 'Basketball Area', allowedVehicleType: 10, totalParkingSpaces: 10 },
+    { name: 'Basketball Area', allowedVehicleType: 10, totalParkingSpaces: 40 },
     { name: 'Engineering Area', allowedVehicleType: 10, totalParkingSpaces: 10 },
     { name: 'SHS Building Area', allowedVehicleType: 10, totalParkingSpaces: 10 },
     { name: 'Canteen Area', allowedVehicleType: 10, totalParkingSpaces: 10 },
   ];
+
+  const navigate = useNavigate(); // Hook for navigation
 
   return (
     <div className="App">
@@ -31,10 +34,13 @@ function CarParking() {
       <div className="outside-container">
         {parkingAreas.map((area, index) => (
           <div className="content-section" key={index}>
-            <p>{area.name}</p> <p>0/40</p>
-            <Link to={`/parkingdetails/${area.name}`}>
-              <p className="details-link">View details</p>
-            </Link>
+            <p>{area.name}</p> <p>{`0/${area.totalParkingSpaces}`}</p>
+            <p
+              className="details-link"
+              onClick={() => navigate(`/parkingdetails/${area.name}`)}
+            >
+              View details
+            </p>
           </div>
         ))}
       </div>

@@ -1,5 +1,5 @@
 // import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './App.css';
 import home from './Home.png';
 import { Button } from '@mui/material';
@@ -22,6 +22,8 @@ function Landing() {
     width: 'auto',
     textTransform: 'none',
   };
+
+  const navigate = useNavigate();
 
   return (
     <div className="App">
@@ -48,7 +50,11 @@ function Landing() {
       <div className="outside-container">
         <div className="content-section">
           <p>Basketball Area</p> <p>10/10</p>
-          <p>View details</p>
+          <p className="details-link"
+              onClick={() => navigate(`/parkingdetails`)}
+            >
+               View details
+               </p>
         </div>
 
         <div className="content-section">

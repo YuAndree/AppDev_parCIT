@@ -28,15 +28,15 @@ function ParkingDetails() {
 
   // Simulate getting details from a database or API based on the areaName
   const [parkingDetails, setParkingDetails] = useState({
-    allowedVehicleType: 0,
-    totalParkingSpaces: 0,
+    allowedVehicleType: "Car",
+    totalParkingSpaces: 10,
     occupiedSpaces: 0,
   });
 
   const handleMinusOne = () => {
     setParkingDetails((prevDetails) => ({
       ...prevDetails,
-      totalParkingSpaces: prevDetails.totalParkingSpaces - 1,
+      occupiedSpaces: prevDetails.occupiedSpaces - 1,
 
     }));
   };
@@ -44,14 +44,14 @@ function ParkingDetails() {
   const handlePlusOne = () => {
     setParkingDetails((prevDetails) => ({
       ...prevDetails,
-      totalParkingSpaces: prevDetails.totalParkingSpaces + 1,
+      occupiedSpaces: prevDetails.occupiedSpaces + 1,
 
     }));
   };
 
   return (
     <div className="App">
-      <Link to="/vehicle">
+      <Link to="/parkingspaces">
         <img src={back} alt="Back" style={backButtonStyle} />
       </Link>
       <h1 className="main-title">ParCIT</h1>
@@ -63,7 +63,7 @@ function ParkingDetails() {
       <div className="outside-con">
         <div className="content-secc">
           <div className="details-section">
-            <p>{areaName} Building</p>
+            <p>{areaName} Basketball</p>
             <p>
               Allowed Vehicle Type: {parkingDetails.allowedVehicleType}
               <br />

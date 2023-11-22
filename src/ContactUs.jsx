@@ -20,7 +20,7 @@ const ContactUs = () => {
       <div className="contact-info">
         <p>Email: UyAndree@Mapagmahal.com</p>
         <p>Phone: +1 123-456-7890</p>
-        <p>Address: 3 Street</p>
+        <p>Address: 3rd Street</p>
       </div>
     </div>
   </div>

@@ -13,6 +13,8 @@ import UpdateParking from './UpdateParkingSpace';
 import CarParking from './CarParking';
 import MotorParking from './MotorParking';
 import ParkingDetails from './ParkingDetails';
+import AboutUs from './AboutUs';
+import ContactUs from './ContactUs';
 
 
 const Main = () => {
@@ -20,6 +22,8 @@ const Main = () => {
   <Router>
       <Routes>
         <Route path="/" element={<SplashScreen />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/contact" element={<ContactUs />} />
         <Route path="/admin" element={<App />} />
         <Route path="/school" element={<StudentTeacher/>}/>
         <Route path="/login" element={<RegisterForm/>}/>

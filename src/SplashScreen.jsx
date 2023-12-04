@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
-import road from './Road.png';
+import road from './icons/Road.png';
 import { Button } from '@mui/material';
 
 function SplashScreen() {

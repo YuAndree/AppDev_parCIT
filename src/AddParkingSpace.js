@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Input } from '@mui/material';
-import back from './Back.png';
+import back from './icons/Back.png';
 import './App.css';
 
 function AddParking() {

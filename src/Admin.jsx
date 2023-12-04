@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
-import logo1 from './Logo1.png';
-import adminIcon from './admin.png';
-import guestIcon from './guest.png';
+import logo1 from './icons/Logo1.png';
+import adminIcon from './icons/admin.png';
+import guestIcon from './icons/guest.png';
 import './App.css';
 
 function App() {

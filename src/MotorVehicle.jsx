@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
 import { Button } from '@mui/material';
-import logo1 from './Logo1.png';
-import carIcon from './car.png';
-import motorIcon from './motor.png';
-import back from './Back.png';
+import logo1 from './icons/Logo1.png';
+import carIcon from './icons/car.png';
+import motorIcon from './icons/motor.png';
+import back from './icons/Back.png';
 import { Link } from 'react-router-dom';
 
 const MotorVehicle = () => {

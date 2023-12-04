@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
-import logo1 from './Logo1.png';
-import teacherIcon from './teacher.png';
-import guestIcon from './guest.png';
-import back from './Back.png';
+import logo1 from './icons/Logo1.png';
+import teacherIcon from './icons/teacher.png';
+import guestIcon from './icons/guest.png';
+import back from './icons/Back.png';
 
 const StudentTeacher = () => {
   const buttonIc = guestIcon;

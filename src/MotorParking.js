@@ -1,7 +1,7 @@
 // import React from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
-import  back from './Back.png'
+import  back from './icons/Back.png'
 // import { Button } from '@mui/material';
 
 function MotorParking() {

@@ -1,12 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-<<<<<<< HEAD
 import back from './icons/Back.png';
-import './App.css'; // Import your CSS file for styling
-=======
-import back from './Back.png';
 import './App.css';
->>>>>>> 0fd9e9e5db9f4905314aa88dfc65371d769fe2f7
 
 const backButtonStyle = {
   position: 'absolute',

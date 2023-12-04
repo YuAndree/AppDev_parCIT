@@ -62,7 +62,9 @@ const AboutUs = () => {
         <div className="team-members-grid">
           {members.map((member) => (
             <div key={member.id} className="member-box">
-              <img src={member1Image} alt={member.name} className="member-image" />
+              <div className="animated-member">
+                <img src={member1Image} alt={member.name} className="member-image" />
+              </div>
               <p className="member-name">{member.name}</p>
               <p className="member-motto">{member.motto}</p>
             </div>

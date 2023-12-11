@@ -3,8 +3,16 @@ import { Link } from 'react-router-dom';
 import { Button, Input } from '@mui/material';
 import back from './icons/Back.png';
 import './App.css';
+import { createParkingDetails } from './index.js';
+import React, { useState } from 'react';
 
 function AddParking() {
+  //Variables to input fields
+  const [name, setName] = useState('');
+  const [capacity, setCapacity] = useState('');
+  const [location, setLocation] = useState('');
+  const [vehicleType, setVehicleType] = useState('');
+  
   const buttonStyle = {
     borderRadius: '25px',
     borderColor: 'white',
@@ -34,9 +42,15 @@ function AddParking() {
   };
 
 
-  const handleAdd = () => {
-    // Implement logic for adding parking space
-    console.log('Add button clicked');
+  const handleAdd = async () => {
+    //input data sa input fields
+    const data = {
+      name: name,
+      capacity: capacity,
+      location: location,
+      vehicleType: vehicleType,
+      };
+    await createParkingDetails(data);
   };
 
   const handleCancel = () => {
@@ -56,25 +70,22 @@ function AddParking() {
       <div className="outside-container">
         <div className="content-section">
           <p>Name:</p>
-          <Input disableUnderline style={inputStyle} />
+          <Input disableUnderline style={inputStyle} value={name} onChange={e => setName(e.target.value)} />
         </div>
 
         <div className="content-section">
-          <p>
-            Capacity:
-            
-          </p><Input disableUnderline style={inputStyle} />
+          <p>Capacity:</p>
+          <Input disableUnderline style={inputStyle} value={capacity} onChange={e => setCapacity(e.target.value)}/>
         </div>
-
         <div className="content-section">
           <p>
             Location:
-          </p><Input disableUnderline style={inputStyle} />
+          </p><Input disableUnderline style={inputStyle} value={location} onChange={e => setLocation(e.target.value)} />
         </div>
         <div className="content-section">
           <p>
             Vehicle Type:
-          </p><Input disableUnderline style={inputStyle} />
+          </p><Input disableUnderline style={inputStyle} value={vehicleType} onChange={e => setVehicleType(e.target.value)} />
         </div>
       </div>
       <div className="button-addcancel">

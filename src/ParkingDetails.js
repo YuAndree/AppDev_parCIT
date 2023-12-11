@@ -1,11 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import './App.css';
 import area from './area.png'
 import back from './Back.png';
 import { Button } from '@mui/material';
+import { getParkingDetails, createParkingDetails } from './api/parking'
+
 
 function ParkingDetails() {
+  useEffect(()=> {
+    const asyncFn = async () => {
+      // const parkingDetails = await getParkingDetails();
+      // console.log("parkingDetails: ", parkingDetails);
+
+      let parkingDetailsData = {
+        user_type: 'student',
+        capacity: 25,
+        location: 'latestdata',
+        vehicle_type: 'latestdata'
+      };
+     // await createParkingDetails(parkingDetailsData);
+    };
+    asyncFn();
+  }, []); 
+
+
+
   const buttonStyle = {
     borderRadius: '25px',
     borderColor: 'white',

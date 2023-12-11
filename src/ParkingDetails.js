@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import './App.css';
-import area from './area.png'
-import back from './Back.png';
+import area from './icons/area.png'
+import back from './icons/Back.png';
 import { Button } from '@mui/material';
 import { getParkingDetails, createParkingDetails } from './api/parking'
 

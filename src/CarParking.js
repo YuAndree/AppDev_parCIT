@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './App.css';
-import back from './Back.png';
+import back from './icons/Back.png';
 
 function CarParking() {
   const backButtonStyle = {
@@ -12,11 +12,20 @@ function CarParking() {
   };
 
   const parkingAreas = [
-    { name: 'Basketball Area', allowedVehicleType: 10, totalParkingSpaces: 40 },
-    { name: 'Engineering Area', allowedVehicleType: 10, totalParkingSpaces: 10 },
-    { name: 'SHS Building Area', allowedVehicleType: 10, totalParkingSpaces: 10 },
-    { name: 'Canteen Area', allowedVehicleType: 10, totalParkingSpaces: 10 },
+    { name: 'Basketball Area', allowedVehicleType: 10, totalParkingSpaces: 10 },
   ];
+
+  const parkingAreasB = [
+     { name: 'Engineering Area', allowedVehicleType: 10, totalParkingSpaces: 10 },
+  ]
+
+  const parkingAreasC = [
+     { name: 'SHS Building Area', allowedVehicleType: 10, totalParkingSpaces: 10 },
+  ]
+
+  const parkingAreasD = [
+    { name: 'Canteen Area', allowedVehicleType: 10, totalParkingSpaces: 10 },
+  ]
 
   const navigate = useNavigate(); // Hook for navigation
 
@@ -32,17 +41,61 @@ function CarParking() {
       </div>
 
       <div className="outside-container">
+      <div>
         {parkingAreas.map((area, index) => (
           <div className="content-section" key={index}>
             <p>{area.name}</p> <p>{`0/${area.totalParkingSpaces}`}</p>
             <p
               className="details-link"
-              onClick={() => navigate(`/parkingdetails/${area.name}`)}
+              onClick={() => navigate(`/studentcarviewbasketball`)}
             >
               View details
             </p>
           </div>
         ))}
+      </div>
+
+      <div>
+        {parkingAreasB.map((area, index) => (
+          <div className="content-section" key={index}>
+            <p>{area.name}</p> <p>{`0/${area.totalParkingSpaces}`}</p>
+            <p
+              className="details-link"
+              onClick={() => navigate(`/studentcarviewengineering`)}
+            >
+              View details
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <div>
+        {parkingAreasC.map((area, index) => (
+          <div className="content-section" key={index}>
+            <p>{area.name}</p> <p>{`0/${area.totalParkingSpaces}`}</p>
+            <p
+              className="details-link"
+              onClick={() => navigate(`/studentcarviewshs`)}
+            >
+              View details
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <div>
+        {parkingAreasD.map((area, index) => (
+          <div className="content-section" key={index}>
+            <p>{area.name}</p> <p>{`0/${area.totalParkingSpaces}`}</p>
+            <p
+              className="details-link"
+              onClick={() => navigate(`/studentcarviewcanteen`)}
+            >
+              View details
+            </p>
+          </div>
+        ))}
+      </div>
       </div>
     </div>
   );

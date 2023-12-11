@@ -1,7 +1,7 @@
 // AboutUs.jsx
 import React from 'react';
-import back from './Back.png';
-import member1Image from './member1.jpg';
+import back from './icons/Back.png';
+import member1Image from './icons/member1.jpg';
 import { Link } from 'react-router-dom';
 import './App.css';
 

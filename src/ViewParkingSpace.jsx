@@ -1,7 +1,7 @@
 // import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './App.css';
-import home from './Home.png';
+import home from './icons/Home.png';
 import { Button } from '@mui/material';
 
 function Landing() {

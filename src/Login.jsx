@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './RegisterForm.css';
-import back from './Back.png';
+import back from './icons/Back.png';
 import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
 

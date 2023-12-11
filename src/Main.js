@@ -15,6 +15,14 @@ import MotorParking from './MotorParking';
 import ParkingDetails from './ParkingDetails';
 import AboutUs from './AboutUs';
 import ContactUs from './ContactUs';
+import StudentCarViewBasketball from './StudentCarViewBasketball';
+import StudentCarViewEngineering from './StudentCarViewEngineering';
+import StudentCarViewSHS from './StudentCarViewSHS';
+import StudentCarViewCanteen from './StudentCarViewCanteen';
+import MotorViewBackGate from './MotorViewBackGate';
+import MotorViewEngineering from './MotorViewEngineering';
+import MotorViewSTS from './MotorViewSTS';
+import MotorViewSHS from './MotorViewSHS';
 
 
 const Main = () => {
@@ -35,6 +43,14 @@ const Main = () => {
         <Route path='/carparking' element={<CarParking/>}/>
         <Route path='/motorparking' element={<MotorParking/>}/>
         <Route path='/parkingdetails' element={<ParkingDetails  />}/>
+        <Route path='/studentcarviewbasketball' element={<StudentCarViewBasketball  />}/>
+        <Route path='/studentcarviewengineering' element={<StudentCarViewEngineering  />}/>
+        <Route path='/studentcarviewshs' element={<StudentCarViewSHS  />}/>
+        <Route path='/studentcarviewcanteen' element={<StudentCarViewCanteen  />}/>
+        <Route path='/motorviewbackgate' element={<MotorViewBackGate  />}/>
+        <Route path='/motorviewengineering' element={<MotorViewEngineering  />}/>
+        <Route path='/motorviewsts' element={<MotorViewSTS  />}/>
+        <Route path='/motorviewshs' element={<MotorViewSHS  />}/>
       </Routes>
     </Router>
   );

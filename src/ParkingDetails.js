@@ -69,49 +69,76 @@ function ParkingDetails() {
     }));
   };
 
+  const handleDelete = async () => {
+    // Display a confirmation dialog
+    const confirmed = window.confirm('Are you sure you want to delete parking space?');
+
+    if (confirmed) {
+      // Perform the delete operation
+      const data = {
+        
+        // capacity: capacity,
+        // location: location,
+        // vehicleType: vehicleType,
+      };
+    }
+  };
+
+  const containerStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  };
+
   return (
     <div className="App">
       <Link to="/parkingspaces">
         <img src={back} alt="Back" style={backButtonStyle} />
       </Link>
       <h1 className="main-title">ParCIT</h1>
-  
-      <div className="button-container">
-        <p className="left">Parking Space Details</p>
-      </div>
-  
-      <div className="outside-con">
-        <div className="content-secc">
-          <div className="details-section">
-            <p>{areaName} Basketball</p>
-            <p>
-              Allowed Vehicle Type: {parkingDetails.allowedVehicleType}
-              <br />
-              Total Parking Spaces: {parkingDetails.totalParkingSpaces}
-              <br />
-              Occupied Spaces: {parkingDetails.occupiedSpaces}
-            </p>
-          </div>
-          <div className="picture-section">
-            <img
-              src={area}
-              alt="Parking Area"
-              style={{ width: '300px', height: '300px', float: 'center' }}
-            />
+
+        <div className="title-and-button">
+          <p className="left">Parking Space Details</p>
+            <Link to="/updateparkingspace">
+              <Button className="update-button" style={buttonStyle}>
+                UPDATE
+              </Button>
+            </Link>
+            <Button className="delete-button" style={buttonStyle} onClick={handleDelete}>
+              DELETE
+            </Button>
+        </div>
+        <div className="outside-con">
+          <div className="content-secc">
+            <div className="details-section">
+              <p>{areaName} Basketball</p>
+              <p>
+                Allowed Vehicle Type: {parkingDetails.allowedVehicleType}
+                <br />
+                Total Parking Spaces: {parkingDetails.totalParkingSpaces}
+                <br />
+                Occupied Spaces: {parkingDetails.occupiedSpaces}
+              </p>
+            </div>
+            <div className="picture-section">
+              <img
+                src={area}
+                alt="Parking Area"
+                style={{ width: '300px', height: '300px', float: 'center' }}
+              />
+            </div>
           </div>
         </div>
+        <div className="plus-min">
+          <Button variant="outlined" style={buttonStyle} onClick={handleMinusOne}>
+            -1
+          </Button>{' '}
+          <Button variant="outlined" style={buttonStyle} onClick={handlePlusOne}>
+            +1
+          </Button>
+        </div>
       </div>
-      <div className="plus-min">
-        <Button variant="outlined" style={buttonStyle} onClick={handleMinusOne}>
-          -1
-        </Button>{' '}
-        <Button variant="outlined" style={buttonStyle} onClick={handlePlusOne}>
-          +1
-        </Button>
-      </div>
-    </div>
   );
-  
 }
 
 export default ParkingDetails;

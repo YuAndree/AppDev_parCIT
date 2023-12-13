@@ -23,6 +23,13 @@ import MotorViewBackGate from './MotorViewBackGate';
 import MotorViewEngineering from './MotorViewEngineering';
 import MotorViewSTS from './MotorViewSTS';
 import MotorViewSHS from './MotorViewSHS';
+import AdminCarViewEngineering from './AdminCarViewEngineering';
+import AdminCarViewSHS from './AdminCarViewSHS';
+import AdminCarViewCanteen from './AdminCarViewCanteen';
+import AdminMotorViewBackGate from './AdminMotorViewBackGate';
+import AdminMotorViewEngineering from './AdminMotorViewEngineering';
+import AdminMotorViewSTS from './AdminMotorViewSTS';
+import AdminMotorViewSHS from './AdminMotorViewSHS';
 
 
 const Main = () => {
@@ -51,6 +58,13 @@ const Main = () => {
         <Route path='/motorviewengineering' element={<MotorViewEngineering  />}/>
         <Route path='/motorviewsts' element={<MotorViewSTS  />}/>
         <Route path='/motorviewshs' element={<MotorViewSHS  />}/>
+        <Route path='/admincarviewengineering' element={<AdminCarViewEngineering />} />
+        <Route path='/admincarviewshs' element={<AdminCarViewSHS  />}/>
+        <Route path='/admincarviewcanteen' element={<AdminCarViewCanteen  />}/>
+        <Route path='/adminmotorviewbackgate' element={<AdminMotorViewBackGate  />}/>
+        <Route path='/adminmotorviewengineering' element={<AdminMotorViewEngineering  />}/>
+        <Route path='/adminmotorviewsts' element={<AdminMotorViewSTS  />}/>
+        <Route path='/adminmotorviewshs' element={<AdminMotorViewSHS  />}/>
       </Routes>
     </Router>
   );

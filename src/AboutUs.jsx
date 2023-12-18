@@ -1,8 +1,16 @@
 // AboutUs.jsx
 import React from 'react';
-import back from './icons/Back.png';
-import member1Image from './icons/member1.jpg';
 import { Link } from 'react-router-dom';
+import back from './icons/Back.png';
+
+// Import individual member images
+import member1Image from './icons/member1.png';
+import member2Image from './icons/member2.JPG';
+import member3Image from './icons/member3.JPG';
+import member4Image from './icons/member4.jpg';
+import member5Image from './icons/member5.jpg';
+import member6Image from './icons/member6.jpg';
+
 import './App.css';
 
 const backButtonStyle = {
@@ -14,41 +22,59 @@ const backButtonStyle = {
 const members = [
   {
     id: 1,
-    name: 'Team Member 1',
-    image: 'member1.jpg',
-    motto: 'Motto 1: Lorem ipsum dolor sit amet',
+  name: 'Chad Luab',
+  image: member1Image,
+  motto: (
+    <>
+      "Nothing is true, everything is permitted"
+      <br />
+      - Hassan-i Sabbāh
+    </>
+  ),
+
   },
   {
     id: 2,
-    name: 'Team Member 2',
-    image: 'member2.jpg',
-    motto: 'Motto 2: Consectetur adipiscing elit',
+    name: 'Andree Uy',
+    image: member2Image,
+    motto: (
+      <>
+        "Obsession is going to beat talent every time."
+        <br />
+        - Stanley Sugarman
+      </>
+    ),
   },
   {
     id: 3,
-    name: 'Team Member 3',
-    image: 'member3.jpg',
-    motto: 'Motto 3: Consectetur adipiscing elit',
+    name: 'Carl Alferez',
+    image: member3Image,
+    motto: (
+      <>
+        "If you don't take risks, you can't create a future"
+        <br />
+        - Monkey D. Luffy
+      </>
+    ),
   },
   {
     id: 4,
-    name: 'Team Member 4',
-    image: 'member4.jpg',
-    motto: 'Motto 4: Consectetur adipiscing elit',
+    name: 'Ian Arbasosa',
+    image: member4Image,
+    motto: '"Premature optimization is the root of all evil"',
   },
   {
     id: 5,
-    name: 'Team Member 5',
-    image: 'member5.jpg',
-    motto: 'Motto 5: Consectetur adipiscing elit',
+    name: 'Jenette Ephan',
+    image: member5Image,
+    motto: '"Building bridges between sketches and screen."',
   },
   {
     id: 6,
-    name: 'Team Member 6',
-    image: 'member6.jpg',
-    motto: 'Motto 6: Consectetur adipiscing elit',
+    name: 'Vince Cañete',
+    image: member6Image,
+    motto: '"Make life fun"',
   },
-  // Add more members as needed
 ];
 
 const AboutUs = () => {
@@ -63,10 +89,17 @@ const AboutUs = () => {
           {members.map((member) => (
             <div key={member.id} className="member-box">
               <div className="animated-member">
-                <img src={member1Image} alt={member.name} className="member-image" />
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="member-image"
+                  style={{ width: '150px', height: '150px', borderRadius: '10px' }}
+                />
               </div>
               <p className="member-name">{member.name}</p>
-              <p className="member-motto">{member.motto}</p>
+              <p className="member-motto" style={{ color: 'white', fontWeight: 'bold' }}>
+                {member.motto}
+              </p>
             </div>
           ))}
         </div>

@@ -36,7 +36,7 @@ function AdminMotorViewEngineering() {
   const handleMinusOne = () => {
     setParkingDetails((prevDetails) => ({
       ...prevDetails,
-      occupiedSpaces: prevDetails.occupiedSpaces - 1,git
+      occupiedSpaces: prevDetails.occupiedSpaces - 1,
 
     }));
   };

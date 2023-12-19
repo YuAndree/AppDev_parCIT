@@ -65,7 +65,7 @@ export const deleteParkingDetails = async (id) => {
         if (response.status === 200) {
             console.log(`Parking space with ID ${id} deleted successfully.`);
         } else {
-            console.error(`Failed to delete parking space with ID ${id}.`);
+            console.error(`Failed  to delete parking space with ID ${id}.`);
         }
     } catch (error) {
         console.error(error);

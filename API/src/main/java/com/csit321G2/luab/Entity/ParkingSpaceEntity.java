@@ -16,6 +16,9 @@ public class ParkingSpaceEntity {
     @Column(name = "parking_space_id")
     private Long parkingSpaceId;
 
+    @Column(name = "parkingSpaceName")
+    private String parkingSpaceName;
+
     @Column(name = "user_type")
     private String userType;
 
@@ -32,11 +35,13 @@ public class ParkingSpaceEntity {
         super();
     }
 
-    public ParkingSpaceEntity(String userType, int capacity, String location, String vehicleType) {
+    public ParkingSpaceEntity(String userType, int capacity, String location, String vehicleType, String parkingSpaceName) {
         this.userType = userType;
         this.capacity = capacity;
         this.location = location;
         this.vehicleType = vehicleType;
+        this.parkingSpaceName = parkingSpaceName;
+
     }
 
     public Long getParkingSpaceId() {
@@ -77,5 +82,14 @@ public class ParkingSpaceEntity {
 
     public void setVehicleType(String vehicleType) {
         this.vehicleType = vehicleType;
+    }
+
+    
+    public String getParkingSpaceName() {
+        return parkingSpaceName;
+    }
+
+    public void setParkingSpaceName(String parkingSpaceName) {
+        this.parkingSpaceName = parkingSpaceName;
     }
 }

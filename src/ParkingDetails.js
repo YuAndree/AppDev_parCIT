@@ -8,21 +8,24 @@ import { getParkingDetails, createParkingDetails } from './api/parking'
 
 
 function ParkingDetails() {
+  let [count, setCount ] = useState();
+
   useEffect(()=> {
     const asyncFn = async () => {
-      // const parkingDetails = await getParkingDetails();
-      // console.log("parkingDetails: ", parkingDetails);
+      const parkingDetails = await getParkingDetails();
+      console.log("parkingDetails: ", parkingDetails);
 
-      let parkingDetailsData = {
-        user_type: 'student',
-        capacity: 25,
-        location: 'latestdata',
-        vehicle_type: 'latestdata'
-      };
-     // await createParkingDetails(parkingDetailsData);
+      // let parkingDetailsData = {
+      //   user_type: 'student',
+      //   capacity: 30,
+      //   location: 'aaa',
+      //   vehicle_type: 'aaa',
+      //   parking_space_name: 'aaa',
+      // };
+    //  await createParkingDetails(parkingDetailsData);
     };
     asyncFn();
-  }, []); 
+  }, []);
 
 
 

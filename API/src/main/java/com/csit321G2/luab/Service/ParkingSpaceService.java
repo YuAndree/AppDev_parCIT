@@ -26,17 +26,19 @@ public class ParkingSpaceService {
         return parkingSpaceRepository.save(parkingSpace);
     }
 
-    public ParkingSpaceEntity updateParkingCapacity(Long id, int capacity) {
-        try {
-            ParkingSpaceEntity parkingSpace = parkingSpaceRepository.findById(id)
-                    .orElseThrow(() -> new RuntimeException("Parking space with id " + id + " not found"));
-
-            parkingSpace.setCapacity(capacity);
-            return parkingSpaceRepository.save(parkingSpace);
-        } catch (Exception e) {
-            throw new RuntimeException("Error updating parking capacity", e);
+        public ParkingSpaceEntity updateParkingCapacity(Long id, int capacity) {
+            try {
+                // attempts to find the ID in the repo
+                ParkingSpaceEntity parkingSpace = parkingSpaceRepository.findById(id)
+                        .orElseThrow(() -> new RuntimeException("Parking space with id " + id + " not found"));
+                // if found, Update it's capacity and return save
+                parkingSpace.setCapacity(capacity);
+                return parkingSpaceRepository.save(parkingSpace);
+            //if exception occurs,  wraps in runtime exception and rethrow        
+            } catch (Exception e) {
+                throw new RuntimeException("Error updating parking capacity", e);
+            }
         }
-    }
 
     public void deleteParkingSpace(Long id) {
         if (parkingSpaceRepository.existsById(id)) {

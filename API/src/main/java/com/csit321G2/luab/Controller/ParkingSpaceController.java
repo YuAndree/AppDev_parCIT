@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/parking")
@@ -33,6 +34,15 @@ public class ParkingSpaceController {
     public ResponseEntity<List<ParkingSpaceEntity>> parkingDetails() {
         List<ParkingSpaceEntity> parkingSpaces = parkingSpaceService.getAllParkingSpaces();
         return ResponseEntity.ok(parkingSpaces);
+    }
+
+    // R - Parking Details
+    @GetMapping("/parkingDetails/{id}")
+    public ResponseEntity<Optional<ParkingSpaceEntity>> parkingDetailsById(
+        @PathVariable Long id
+    ) {
+        Optional<ParkingSpaceEntity> parkingSpace = parkingSpaceService.getParkingSpaceById(id);
+        return ResponseEntity.ok(parkingSpace);
     }
         // U - Update parking capacity
 //This annotation maps HTTP PUT requests to the specified endpoint 

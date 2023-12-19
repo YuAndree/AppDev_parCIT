@@ -46,7 +46,7 @@ const Main = () => {
         <Route path="/signup" element={<SignupForm/>}/>
         <Route path='/vehicle' element={<MotorVehicle/>}/>
         <Route path='/addparkingspace' element={<AddParking/>}/>
-        <Route path='/updateparkingspace' element={<UpdateParking/>}/>
+        <Route path='/updateparkingspace/:parkingSpaceId' element={<UpdateParking/>}/>
         <Route path='/carparking' element={<CarParking/>}/>
         <Route path='/motorparking' element={<MotorParking/>}/>
         <Route path='/parkingdetails/:parkingSpaceId' element={<ParkingDetails  />}/>

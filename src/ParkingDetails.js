@@ -1,53 +1,48 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLocation, useNavigation, useParams } from 'react-router-dom';
 import './App.css';
 import area from './icons/area.png'
 import back from './icons/Back.png';
 import { Button } from '@mui/material';
-import { getParkingDetails, createParkingDetails } from './api/parking'
+import { getParkingDetailsById } from './api/parking'
 
+const buttonStyle = {
+  borderRadius: '25px',
+  borderColor: 'white',
+  color: 'white',
+  alignText: 'center',
+  fontWeight: 'bold',
+  fontFamily: 'Verdana',
+  width: '100px',
+  textTransform: 'none',
+  marginBottom: '10px',
+};
 
-function ParkingDetails() {
-  let [count, setCount ] = useState();
+const backButtonStyle = {
+  position: 'absolute',
+  left: '20px',
+  top: '20px',
+}
+
+const containerStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+};
+
+function ParkingDetails(props) {
+  let [parkingDetailsById, setParkingDetailsById ] = useState({});
+  const { areaName, parkingSpaceId } = useParams();
 
   useEffect(()=> {
     const asyncFn = async () => {
-      const parkingDetails = await getParkingDetails();
+      const parkingDetails = await getParkingDetailsById(parkingSpaceId);
       console.log("parkingDetails: ", parkingDetails);
 
-      // let parkingDetailsData = {
-      //   user_type: 'student',
-      //   capacity: 30,
-      //   location: 'aaa',
-      //   vehicle_type: 'aaa',
-      //   parking_space_name: 'aaa',
-      // };
-    //  await createParkingDetails(parkingDetailsData);
+      setParkingDetailsById(parkingDetails);
     };
     asyncFn();
-  }, []);
-
-
-
-  const buttonStyle = {
-    borderRadius: '25px',
-    borderColor: 'white',
-    color: 'white',
-    alignText: 'center',
-    fontWeight: 'bold',
-    fontFamily: 'Verdana',
-    width: '100px',
-    textTransform: 'none',
-    marginBottom: '10px',
-  };
-
-  const backButtonStyle = {
-    position: 'absolute',
-    left: '20px',
-    top: '20px',
-  };
-
-  const { areaName } = useParams();
+  }, []);;
 
   // Simulate getting details from a database or API based on the areaName
   const [parkingDetails, setParkingDetails] = useState({
@@ -87,11 +82,22 @@ function ParkingDetails() {
     }
   };
 
-  const containerStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  };
+  const renderParkingDetailsById = () => {
+    if(!Object.keys(parkingDetailsById).length) {
+      return (<p>No data to be displayed</p>);
+    }
+
+    return (<div className="details-section">
+      <p>{parkingDetailsById.parkingSpaceName}</p>
+      <p>
+        Allowed Vehicle Type: {parkingDetailsById.vehicleType}
+        <br />
+        Total Parking Spaces: {parkingDetailsById.capacity}
+        <br />
+        Occupied Spaces: {parkingDetails.occupiedSpaces}
+      </p>
+    </div>);
+  }
 
   return (
     <div className="App">
@@ -102,7 +108,7 @@ function ParkingDetails() {
 
         <div className="title-and-button">
           <p className="left">Parking Space Details</p>
-            <Link to="/updateparkingspace">
+            <Link to={`/updateparkingspace/${parkingSpaceId}`}>
               <Button className="update-button" style={buttonStyle}>
                 UPDATE
               </Button>
@@ -113,16 +119,7 @@ function ParkingDetails() {
         </div>
         <div className="outside-con">
           <div className="content-secc">
-            <div className="details-section">
-              <p>{areaName} Basketball</p>
-              <p>
-                Allowed Vehicle Type: {parkingDetails.allowedVehicleType}
-                <br />
-                Total Parking Spaces: {parkingDetails.totalParkingSpaces}
-                <br />
-                Occupied Spaces: {parkingDetails.occupiedSpaces}
-              </p>
-            </div>
+            { renderParkingDetailsById() }
             <div className="picture-section">
               <img
                 src={area}

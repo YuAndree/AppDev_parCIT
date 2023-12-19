@@ -10,6 +10,18 @@ export const getParkingDetails = async () => {
     };
 }
 
+export const getParkingDetailsById = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:8080/parking/parkingDetails/${id}`, {
+        method: "GET",
+      });
+      const result = await response.json();
+      return result;
+    } catch(error) {
+        console.log('par ka atay sa error par!!!! ', error);
+    };
+}
+
 export const createParkingDetails = async (data) => {
     const options = {
         method: 'POST',

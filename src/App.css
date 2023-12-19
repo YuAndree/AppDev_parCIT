@@ -263,3 +263,16 @@ body {
 .animated-member {
   animation: fadeIn 0.5s ease-in-out;
 }
+
+.title-and-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Add other styles as needed */
+}

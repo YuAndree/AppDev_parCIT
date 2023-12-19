@@ -70,24 +70,23 @@ function Landing() {
       </Link>
       <h1 className="main-title">ParCIT</h1>
 
-      <div className="button-container">
-        <p className="left">All Parking Spaces</p>
-        <div className="right-buttons">
+      {/* Car Section */}
+      <div className="car-section">
+        <div className="title-and-button">
+          <p className="left">Car Parking Spaces</p>
           <Link to="/addparkingspace">
             <Button className="add-button" style={buttonStyle}>
               ADD
             </Button>
-          </Link></div>
-          <Link to="/updateparkingspace">
-            <Button className="update-button" style={buttonStyle}>
-              UPDATE
-            </Button>
           </Link>
+        </div>
+
+        <div className="outside-container">
+          { renderParkingAreas() }
+        </div>
       </div>
 
-      <div className="outside-container">
-        { renderParkingAreas() }
-      </div>
+      
     </div>
   );
 }

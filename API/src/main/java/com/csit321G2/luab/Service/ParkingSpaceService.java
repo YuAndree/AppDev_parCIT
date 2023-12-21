@@ -26,19 +26,60 @@ public class ParkingSpaceService {
         return parkingSpaceRepository.save(parkingSpace);
     }
 
-        public ParkingSpaceEntity updateParkingCapacity(Long id, int capacity) {
-            try {
-                // attempts to find the ID in the repo
-                ParkingSpaceEntity parkingSpace = parkingSpaceRepository.findById(id)
-                        .orElseThrow(() -> new RuntimeException("Parking space with id " + id + " not found"));
-                // if found, Update it's capacity and return save
-                parkingSpace.setCapacity(capacity);
-                return parkingSpaceRepository.save(parkingSpace);
-            //if exception occurs,  wraps in runtime exception and rethrow        
-            } catch (Exception e) {
-                throw new RuntimeException("Error updating parking capacity", e);
-            }
+    public ParkingSpaceEntity updateParking(
+        Long id,
+        int capacity,
+        String parkingSpaceName,
+        String userType,
+        String location,
+        String vehicleType,
+        int occupiedSpaces
+    ) {
+        try {
+            // attempts to find the ID in the repo
+            ParkingSpaceEntity parkingSpace = parkingSpaceRepository.findById(id)
+                    .orElseThrow(() -> new RuntimeException("Parking space with id " + id + " not found"));
+            // if found, Update all data and return save
+            parkingSpace.setCapacity(capacity);
+            parkingSpace.setParkingSpaceName(parkingSpaceName);
+            parkingSpace.setUserType(userType);
+            parkingSpace.setLocation(location);
+            parkingSpace.setVehicleType(vehicleType);
+            parkingSpace.setOccupiedSpaces(occupiedSpaces);
+            return parkingSpaceRepository.save(parkingSpace);
+        //if exception occurs,  wraps in runtime exception and rethrow        
+        } catch (Exception e) {
+            throw new RuntimeException("Error updating parking space", e);
         }
+    }
+
+    public ParkingSpaceEntity updateParkingOccupiedSpaces(Long id, int occupiedSpaces) {
+        try {
+            // attempts to find the ID in the repo
+            ParkingSpaceEntity parkingSpace = parkingSpaceRepository.findById(id)
+                    .orElseThrow(() -> new RuntimeException("Parking space with id " + id + " not found"));
+            // if found, Update it's occupiedSpaces and return save
+            parkingSpace.setOccupiedSpaces(occupiedSpaces);
+            return parkingSpaceRepository.save(parkingSpace);
+        //if exception occurs,  wraps in runtime exception and rethrow        
+        } catch (Exception e) {
+            throw new RuntimeException("Error updating parking occupiedSpaces", e);
+        }
+    }
+
+    public ParkingSpaceEntity updateParkingCapacity(Long id, int capacity) {
+        try {
+            // attempts to find the ID in the repo
+            ParkingSpaceEntity parkingSpace = parkingSpaceRepository.findById(id)
+                    .orElseThrow(() -> new RuntimeException("Parking space with id " + id + " not found"));
+            // if found, Update it's capacity and return save
+            parkingSpace.setCapacity(capacity);
+            return parkingSpaceRepository.save(parkingSpace);
+        //if exception occurs,  wraps in runtime exception and rethrow        
+        } catch (Exception e) {
+            throw new RuntimeException("Error updating parking capacity", e);
+        }
+    }
 
     public void deleteParkingSpace(Long id) {
         if (parkingSpaceRepository.existsById(id)) {

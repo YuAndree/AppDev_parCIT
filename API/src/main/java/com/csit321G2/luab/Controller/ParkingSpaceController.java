@@ -29,6 +29,41 @@ public class ParkingSpaceController {
         return ResponseEntity.ok(createdParkingSpace);
     }
 
+    @PutMapping("/updateParking/{id}")
+    public ResponseEntity<ParkingSpaceEntity> updateParking(
+            @PathVariable Long id,
+            @RequestParam int capacity,
+            @RequestParam String parkingSpaceName,
+            @RequestParam String userType,
+            @RequestParam String location,
+            @RequestParam String vehicleType,
+            @RequestParam int occupiedSpaces
+    ) {
+        ParkingSpaceEntity updatedParkingSpace = parkingSpaceService.updateParking(id, capacity, parkingSpaceName, userType, location, vehicleType, occupiedSpaces);
+        // Check if the update was successful
+        if (updatedParkingSpace != null) {
+            return ResponseEntity.ok(updatedParkingSpace);
+        } else {
+         // if parking space is not found return 404 response
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @PutMapping("/updateParkingOccupiedSpaces/{id}")
+    public ResponseEntity<ParkingSpaceEntity> updateParkingOccupiedSpaces(
+            @PathVariable Long id,
+            @RequestParam int occupiedSpaces
+    ) {
+        ParkingSpaceEntity updatedParkingSpace = parkingSpaceService.updateParkingOccupiedSpaces(id, occupiedSpaces);
+        // Check if the update was successful
+        if (updatedParkingSpace != null) {
+            return ResponseEntity.ok(updatedParkingSpace);
+        } else {
+        // if parking space is not found return 404 response
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     // R - Parking Details
     @GetMapping("/parkingDetails")
     public ResponseEntity<List<ParkingSpaceEntity>> parkingDetails() {

@@ -26,7 +26,6 @@ const buttonStyle = {
 function Landing() {
   const navigate = useNavigate();
   const [parkingAreas, setParkingAreas] = useState([]);
-  const [parkingAreasOne, setParkingAreasOne] = useState([]);
   
   useEffect(()=> {
     const asyncFn = async () => {

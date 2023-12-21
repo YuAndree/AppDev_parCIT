@@ -19,6 +19,9 @@ public class ParkingSpaceEntity {
     @Column(name = "parkingSpaceName")
     private String parkingSpaceName;
 
+    @Column(name = "occupiedSpaces")
+    private int occupiedSpaces;
+
     @Column(name = "user_type")
     private String userType;
 
@@ -35,12 +38,13 @@ public class ParkingSpaceEntity {
         super();
     }
 
-    public ParkingSpaceEntity(String userType, int capacity, String location, String vehicleType, String parkingSpaceName) {
+    public ParkingSpaceEntity(String userType, int capacity, String location, String vehicleType, String parkingSpaceName, int occupiedSpaces) {
         this.userType = userType;
         this.capacity = capacity;
         this.location = location;
         this.vehicleType = vehicleType;
         this.parkingSpaceName = parkingSpaceName;
+        this.occupiedSpaces = occupiedSpaces;
 
     }
 
@@ -91,5 +95,13 @@ public class ParkingSpaceEntity {
 
     public void setParkingSpaceName(String parkingSpaceName) {
         this.parkingSpaceName = parkingSpaceName;
+    }
+
+    public int getOccupiedSpaces() {
+        return occupiedSpaces;
+    }
+
+    public void setOccupiedSpaces(int occupiedSpaces) {
+        this.occupiedSpaces = occupiedSpaces;
     }
 }
